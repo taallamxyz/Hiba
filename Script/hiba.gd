@@ -26,3 +26,5 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	
+	$CameraController.position = lerp($CameraController.position, position, .08)

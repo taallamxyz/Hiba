@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://l1dhtqji1d6x"]
+
+[ext_resource type="PackedScene" uid="uid://b7lrul28j1cpu" path="res://Scenes/Prefabs/hiba.tscn" id="1_c0r4e"]
+[ext_resource type="PackedScene" uid="uid://bbno7s3k8thrh" path="res://Scenes/Prefabs/block.tscn" id="2_m0h5h"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="3_20uw2"]
+[ext_resource type="Script" uid="uid://c226llojjpjcm" path="res://Script/icon.gd" id="4_i36j2"]
+[ext_resource type="PackedScene" uid="uid://dwod1c8k5hdse" path="res://Scenes/Prefabs/coin.tscn" id="5_hkfpk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ilcil"]
+size = Vector3(10, 0.5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ilcil"]
+size = Vector3(10, 0.5, 10)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c0r4e"]
+sky_top_color = Color(0, 0.8137033, 0.9513902, 1)
+sky_horizon_color = Color(0.8715109, 0.84401006, 0.89559793, 1)
+sky_curve = 0.08919054
+sky_cover_modulate = Color(0.2629552, 0.4049469, 0.39924726, 1)
+ground_bottom_color = Color(0.79196554, 0.89041597, 0.8218455, 1)
+ground_horizon_color = Color(0.84506583, 0.83096486, 0.95792145, 1)
+
+[sub_resource type="Sky" id="Sky_m0h5h"]
+sky_material = SubResource("ProceduralSkyMaterial_c0r4e")
+
+[sub_resource type="Environment" id="Environment_20uw2"]
+background_mode = 2
+sky = SubResource("Sky_m0h5h")
+
+[node name="level 1" type="Node3D" unique_id=550695805]
+
+[node name="floor" type="StaticBody3D" parent="." unique_id=2034946796]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.26513124, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=1195255663]
+mesh = SubResource("BoxMesh_ilcil")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=826577044]
+shape = SubResource("BoxShape3D_ilcil")
+debug_color = Color(0.98643893, 0, 0.3548271, 0.41960785)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1907087700]
+transform = Transform3D(0.15039787, -0.98793215, -0.037018828, 0.05389911, -0.029195234, 0.9981195, -0.9871553, -0.15211031, 0.04885769, -0.4810014, 4.2330008, 2.709503)
+
+[node name="steve" parent="." unique_id=1795279572 instance=ExtResource("1_c0r4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0886517, 0.53519714, 0)
+
+[node name="tou le block" type="Node" parent="." unique_id=187210176]
+
+[node name="block2" parent="tou le block" unique_id=136272835 instance=ExtResource("2_m0h5h")]
+transform = Transform3D(0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 0, 0, 1, -0.94732666, 2.5747147, 3.602386)
+
+[node name="block3" parent="tou le block" unique_id=1547079860 instance=ExtResource("2_m0h5h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.131948, 2.1310587, 3.3981261)
+
+[node name="block" parent="tou le block" unique_id=580722751 instance=ExtResource("2_m0h5h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6863575, 3.56581, 0.42431772)
+
+[node name="block4" parent="tou le block" unique_id=1367445376 instance=ExtResource("2_m0h5h")]
+transform = Transform3D(1, 0, 0, 0, 0.9999882, 0.0048520267, 0, -0.0048520267, 0.9999882, -1.4556165, 1.2580037, 3.920282)
+
+[node name="icon" type="Sprite3D" parent="." unique_id=922835634]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.162101, 0)
+texture = ExtResource("3_20uw2")
+script = ExtResource("4_i36j2")
+
+[node name="coin1" parent="." unique_id=1688600881 instance=ExtResource("5_hkfpk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.654991, 1.7652669, 3.8701274)
+
+[node name="coin3" parent="." unique_id=854388593 instance=ExtResource("5_hkfpk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3611825, 1.7652669, 3.8701274)
+
+[node name="coin4" parent="." unique_id=1658883108 instance=ExtResource("5_hkfpk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9582608, 3.5466757, 3.8701274)
+
+[node name="coin5" parent="." unique_id=880420801 instance=ExtResource("5_hkfpk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85339427, 3.8120446, 3.8701274)
+
+[node name="coin2" parent="." unique_id=1743174587 instance=ExtResource("5_hkfpk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.87760496, 1.7446442, 1.3375676)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1342300053]
+environment = SubResource("Environment_20uw2")
