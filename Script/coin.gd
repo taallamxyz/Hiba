@@ -17,8 +17,13 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
+	Globals.coins += 1
+	$AnimationPlayer.play("bounce")
 	audioPlayer.play()
-	mesh.visible = false
 	collision.set_deferred("disabled", true)
 	await  audioPlayer.finished
 	queue_free()
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	mesh.visible = false
