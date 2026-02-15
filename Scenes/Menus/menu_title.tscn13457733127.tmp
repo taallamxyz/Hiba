@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://vdeerqtg3lot"]
+
+[ext_resource type="Script" uid="uid://daqlfypyhuf5t" path="res://Script/menu_title.gd" id="1_fi5ls"]
+
+[node name="MenuTitle" type="Control" unique_id=1702699371]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_fi5ls")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=726997664]
+layout_mode = 0
+offset_right = 1223.0
+offset_bottom = 686.0
+color = Color(0.76259536, 0.52489907, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=19943906]
+layout_mode = 0
+offset_left = 81.0
+offset_top = -56.0
+offset_right = 1136.0
+offset_bottom = 356.0
+theme_override_colors/font_color = Color(1, 0.5206617, 0.8594874, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.8634428, 0.17923622, 0.93700004)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 300
+text = "عالم هبة	"
+
+[node name="Button" type="Button" parent="." unique_id=1039308147]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 366.0
+offset_right = 781.0
+offset_bottom = 553.0
+theme_override_colors/font_color = Color(0.908733, 0.90918535, 0.3131743, 1)
+theme_override_colors/font_pressed_color = Color(0.9249915, 0.6740522, 0.69379455, 1)
+theme_override_colors/font_hover_color = Color(0.21518567, 0.6732156, 0.67647994, 1)
+theme_override_font_sizes/font_size = 100
+text = "ابدأ"
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

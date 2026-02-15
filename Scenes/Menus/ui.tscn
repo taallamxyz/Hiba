@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cxeokgev8wl76"]
+
+[ext_resource type="Script" uid="uid://balspoxt5tud7" path="res://Script/ui.gd" id="1_ciit1"]
+
+[node name="UI" type="CanvasLayer" unique_id=891808729]
+script = ExtResource("1_ciit1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1650065148]
+offset_left = 938.0
+offset_top = -1.0
+offset_right = 1154.0
+offset_bottom = 70.0
+
+[node name="Label" type="Label" parent="." unique_id=1926411160]
+layout_direction = 3
+offset_left = 10.0
+offset_right = 151.0
+offset_bottom = 55.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 39
+text = "الفلوس :"
+
+[node name="CoinsNumber" type="Label" parent="." unique_id=883440145]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -199.0
+offset_top = 2.0
+offset_right = -79.0
+offset_bottom = 57.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 39
+text = "0"

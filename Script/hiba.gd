@@ -20,6 +20,7 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		$SoundJump.play()
 		velocity.y = JUMP_VELOCITY
 		$AnimationPlayer.play("RobotArmature|Robot_Jump")
 
@@ -61,4 +62,10 @@ func bounce():
 	velocity.y = JUMP_VELOCITY
 
 func _on_fall_zone_body_entered(body: Node3D) -> void:
-	get_tree().change_scene_to_file("res://Scenes/Levels/level1.tscn")
+	
+	SoundManger.play_sound_fall_zone()
+	await get_tree().create_timer(0.1).timeout
+	get_tree().change_scene_to_file("res://Scenes/Menus/menu_game_over.tscn")
+
+func play_death_animation():
+	$AnimationPlayer.play("RobotArmature|Robot_Death")

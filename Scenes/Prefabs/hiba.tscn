@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://b7lrul28j1cpu"]
 
 [ext_resource type="Script" uid="uid://qc7lhqihmsgr" path="res://Script/hiba.gd" id="1_bh3ft"]
+[ext_resource type="AudioStream" uid="uid://csu8gi0af7wb3" path="res://assets/Sounds/SoundEffects/jump-jump4.ogg" id="2_oaoqx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y0xqv"]
 radius = 0.35009766
@@ -5516,3 +5517,7 @@ skin = SubResource("Skin_7v5xh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=212199334]
 libraries/ = SubResource("AnimationLibrary_swk0n")
+
+[node name="SoundJump" type="AudioStreamPlayer3D" parent="." unique_id=1680370532]
+stream = ExtResource("2_oaoqx")
+volume_db = -40.0

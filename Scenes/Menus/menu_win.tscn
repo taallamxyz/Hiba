@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://c377atgxpwic3"]
+
+[ext_resource type="Script" uid="uid://daqlfypyhuf5t" path="res://Script/menu_title.gd" id="1_rh57j"]
+
+[node name="MenuGameOver" type="Control" unique_id=1702699371]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_rh57j")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=726997664]
+layout_mode = 0
+offset_right = 1223.0
+offset_bottom = 686.0
+color = Color(0.07016479, 0.6155507, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=19943906]
+layout_mode = 0
+offset_left = 112.0
+offset_top = -6.0
+offset_right = 1091.0
+offset_bottom = 406.0
+theme_override_colors/font_color = Color(0.9031846, 0.67644536, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.99333364, 0.5066782, 0.90836877, 0.9372549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 300
+text = "ربحت!!!	"
+
+[node name="Button" type="Button" parent="." unique_id=1039308147]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 366.0
+offset_right = 781.0
+offset_bottom = 553.0
+theme_override_colors/font_color = Color(0.908733, 0.90918535, 0.3131743, 1)
+theme_override_colors/font_pressed_color = Color(0.9249915, 0.6740522, 0.69379455, 1)
+theme_override_colors/font_hover_color = Color(0.21518567, 0.6732156, 0.67647994, 1)
+theme_override_font_sizes/font_size = 100
+text = "ابدأ"
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
