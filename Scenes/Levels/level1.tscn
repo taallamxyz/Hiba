@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://l1dhtqji1d6x"]
 
 [ext_resource type="PackedScene" uid="uid://b7lrul28j1cpu" path="res://Scenes/Prefabs/hiba.tscn" id="1_c0r4e"]
-[ext_resource type="Script" uid="uid://ilj5h4d8a02a" path="res://Scenes/Levels/level.gd" id="1_m0h5h"]
+[ext_resource type="Script" uid="uid://ilj5h4d8a02a" path="res://Script/level.gd" id="1_m0h5h"]
 [ext_resource type="MeshLibrary" uid="uid://cathgk7wqche1" path="res://Ressources/GroundBlocks.tres" id="2_0xrym"]
 [ext_resource type="PackedScene" uid="uid://bbno7s3k8thrh" path="res://Scenes/Prefabs/block.tscn" id="2_m0h5h"]
+[ext_resource type="PackedScene" uid="uid://ve78m1vevx7o" path="res://Scenes/Prefabs/enemy1.tscn" id="3_m0h5h"]
 [ext_resource type="PackedScene" uid="uid://dwod1c8k5hdse" path="res://Scenes/Prefabs/coin.tscn" id="5_hkfpk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c0r4e"]
@@ -30,6 +31,16 @@ script = ExtResource("1_m0h5h")
 [node name="hiba" parent="." unique_id=1795279572 instance=ExtResource("1_c0r4e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4671855, 0.53519714, 8.1899395)
 
+[node name="Enemies" type="Node" parent="." unique_id=1340478997]
+
+[node name="Enemy1" parent="Enemies" unique_id=1314292710 instance=ExtResource("3_m0h5h")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.582163, -0.04914999, 0.33300114)
+turn_at_edges = true
+
+[node name="Enemy2" parent="Enemies" unique_id=226716897 instance=ExtResource("3_m0h5h")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.6710272, 0.7757168, -17.30648)
+turn_at_edges = true
+
 [node name="World2" type="Node" parent="." unique_id=345410588]
 
 [node name="Ground" type="GridMap" parent="World2" unique_id=1290659765]
@@ -44,16 +55,16 @@ metadata/_editor_floor_ = Vector3(0, -1, 0)
 [node name="Blocks" type="Node" parent="World2" unique_id=187210176]
 
 [node name="block2" parent="World2/Blocks" unique_id=136272835 instance=ExtResource("2_m0h5h")]
-transform = Transform3D(0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 0, 0, 1, -0.94732666, 2.5747147, 3.602386)
+transform = Transform3D(0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 0, 0, 1, -1.9554439, 2.5747147, -1.730341)
 
 [node name="block3" parent="World2/Blocks" unique_id=1547079860 instance=ExtResource("2_m0h5h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.131948, 2.1310587, 3.3981261)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6768169, 2.1310587, -2.6403842)
 
 [node name="block" parent="World2/Blocks" unique_id=580722751 instance=ExtResource("2_m0h5h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6863575, 3.56581, 0.42431772)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.94336414, 3.56581, -2.3582497)
 
 [node name="block4" parent="World2/Blocks" unique_id=1367445376 instance=ExtResource("2_m0h5h")]
-transform = Transform3D(1, 0, 0, 0, 0.9999882, 0.0048520267, 0, -0.0048520267, 0.9999882, -1.4556165, 1.2580037, 3.920282)
+transform = Transform3D(1, 0, 0, 0, 0.9999882, 0.0048520267, 0, -0.0048520267, 0.9999882, -0.81094694, 1.2580037, -1.5475593)
 
 [node name="Coins" type="Node" parent="World2" unique_id=2003471095]
 

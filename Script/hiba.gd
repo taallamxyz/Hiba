@@ -21,6 +21,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		$AnimationPlayer.play("RobotArmature|Robot_Jump")
 
 	# Get the input direction and handle the movement/deceleration.
 
@@ -28,7 +29,7 @@ func _physics_process(delta: float) -> void:
 	var direction = (cameraController.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	if input_dir != Vector2(0,0):
-		$Armature2.rotation_degrees.y = cameraController.rotation_degrees.y - rad_to_deg(input_dir.angle()) + 90
+		$RootNode.rotation_degrees.y = cameraController.rotation_degrees.y - rad_to_deg(input_dir.angle()) + 90
 	
 	if is_on_floor():
 		align_with_floor($RayCast3D.get_collision_normal())
@@ -40,7 +41,9 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		$AnimationPlayer.play("RobotArmature|Robot_Running")
 	else:
+		$AnimationPlayer.play("RobotArmature|Robot_Idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
@@ -51,9 +54,11 @@ func _physics_process(delta: float) -> void:
 func align_with_floor(floor_normal):
 	xform = global_transform
 	xform.basis.y = floor_normal
-	xform.basis.x = xform.basis.z.cross(floor_normal)
+	xform.basis.x = -xform.basis.z.cross(floor_normal)
 	xform.basis = xform.basis.orthonormalized()
 
+func bounce():
+	velocity.y = JUMP_VELOCITY
 
 func _on_fall_zone_body_entered(body: Node3D) -> void:
 	get_tree().change_scene_to_file("res://Scenes/Levels/level1.tscn")
